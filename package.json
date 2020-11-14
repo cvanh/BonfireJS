@@ -1,0 +1,25 @@
+{
+  "name": "BonfireJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/app-bonfire/BonfireJS.git"
+  },
+  "keywords": [],
+  "author": "[giovanni]",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/app-bonfire/BonfireJS/issues"
+  },
+  "homepage": "https://github.com/app-bonfire/BonfireJS#readme",
+  "dependencies": {
+    "discord.js": "^11.6.4",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security"
+  }
+}
