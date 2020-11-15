@@ -56,7 +56,7 @@ bot.on("message", async (message) => {
   if (commandfile) commandfile.run(bot, message, args);
 });
 
-//Add Channels
+//Add Channels on bot join
 bot.on("guildCreate", async (guild) => {
   if (!guild.channels.exists("name", "bonfire")) {
     $: category = await guild.createChannel("bonfire", {
@@ -94,13 +94,33 @@ bot.on("guildCreate", async (guild) => {
     });
   }
 
+  if (!guild.channels.exists("name", "welcome")) {
+    $: channel_welcome = await guild.createChannel("welcome", {
+      type: "text",
+      permissionOverwrites: [
+        {
+          id: guild.id,
+          deny: [
+            "SEND_MESSAGES",
+            "SEND_TTS_MESSAGES",
+            "MANAGE_MESSAGES",
+            "ATTACH_FILES",
+            "ADD_REACTIONS",
+          ],
+        },
+      ],
+    });
+  }
+
   await channel.setParent(category);
-
+  await channel_welcome.setParent(category);
   await channel.lockPermissions();
-
+  await channel_welcome.lockPermissions();
   await channel.sendMessage(
     `hello! thank you so much for adding me to your server. In this channel my developer will post status updated and other important things. if you find any bugs don't be afraid to report them through the github repository (https://github.com/app-bonfire/BonfireJS/issues) or by adding my developer (gio#1234). stay cozy. This channel is only visible for administratos ^-^`
   );
 });
+
+bot.on("guildMemberAdd", (member) => {});
 
 bot.login(process.env.TOKEN);
