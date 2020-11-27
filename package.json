@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/app-bonfire/BonfireJS#readme",
   "dependencies": {
-    "discord.js": "^11.6.4",
+    "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
+    "ms": "^2.1.2",
     "mysql": "^2.18.1"
   }
 }
