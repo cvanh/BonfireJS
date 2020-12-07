@@ -58,7 +58,7 @@ bot.on("message", async (message) => {
 
 bot.on('message', message =>{
   if(message.content === 'lmao'){
-    message.channel.send('lol')
+    message.channel.send('https://i.imgur.com/mtG1Bcb.png')
   }
 })
 
