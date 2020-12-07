@@ -56,4 +56,10 @@ bot.on("message", async (message) => {
   if (commandfile) commandfile.run(bot, message, args);
 });
 
+bot.on('message', message =>{
+  if(message.content === 'lmao'){
+    message.channel.send('lol')
+  }
+})
+
 bot.login(process.env.TOKEN);
